@@ -528,19 +528,23 @@ div.footer a:visited {
   }
   body:not(.landing) .highlight-output,
   body:not(.landing) .highlight-python,
-  body:not(.landing) .highlight-javascript {
+  body:not(.landing) .highlight-javascript,
+  body:not(.landing) .highlight-sh {
     width: auto;
     max-width: 500px;
   }
-  body:not(.landing) .highlight-python pre {
+  body:not(.landing) .highlight-python pre,
+  body:not(.landing) .highlight-sh pre {
     margin: -10px 0 10px 0;
   }
-  body:not(.landing) .highlight-python:before {
+  body:not(.landing) .highlight-python:before,
+  body:not(.landing) .highlight-sh:before {
     height: 24px !important;
     line-height: 24px;
     font-size: .7em;
   }
-  body:not(.landing) .highlight-python:after {
+  body:not(.landing) .highlight-python:after,
+  body:not(.landing) .highlight-sh:after {
     background: none;
   }
   body:not(.landing) aside {
