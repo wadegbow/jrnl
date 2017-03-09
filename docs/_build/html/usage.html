@@ -47,24 +47,24 @@
 <p>We intentionally break a convention on command line arguments: all arguments starting with a <cite>single dash</cite> will <cite>filter</cite> your journal before viewing it, and can be combined arbitrarily. Arguments with a <cite>double dash</cite> will control how your journal is displayed or exported and are mutually exclusive (ie. you can only specify one way to display or export your journal at a time).</p>
 <div class="section" id="listing-journals">
 <h2>Listing Journals<a class="headerlink" href="#listing-journals" title="Permalink to this headline">¶</a></h2>
-<p>You can list the journals accessible by jrnl:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">ls</span>
+<p>You can list the journals accessible by jrnl</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl -ls
 </pre></div>
 </div>
 <p>The journals displayed correspond to those specified in the jrnl configuration file.</p>
 </div>
 <div class="section" id="composing-entries">
 <h2>Composing Entries<a class="headerlink" href="#composing-entries" title="Permalink to this headline">¶</a></h2>
-<p>Composing mode is entered by either starting <code class="docutils literal"><span class="pre">jrnl</span></code> without any arguments &#8211; which will prompt you to write an entry or launch your editor &#8211; or by just writing an entry on the prompt, such as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>jrnl today at 3am: I just met Steve Buscemi in a bar! He looked funny.
+<p>Composing mode is entered by either starting <code class="docutils literal"><span class="pre">jrnl</span></code> without any arguments &#8211; which will prompt you to write an entry or launch your editor &#8211; or by just writing an entry on the prompt, such as</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl today at 3am: I just met Steve Buscemi in a bar! He looked funny.
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Most shell contains a certain number of reserved characters, such as <code class="docutils literal"><span class="pre">#</span></code> and <code class="docutils literal"><span class="pre">*</span></code>. Unbalanced quotes, parenthesis, and so on will also get into the way of your editing. For writing longer entries, just enter <code class="docutils literal"><span class="pre">jrnl</span></code> and hit <code class="docutils literal"><span class="pre">return</span></code>. Only then enter the text of your journal entry. Alternatively, <a class="reference internal" href="advanced.html"><span class="doc">use an external editor</span></a>).</p>
 </div>
-<p>You can also import an entry directly from a file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">&lt;</span> <span class="n">my_entry</span><span class="o">.</span><span class="n">txt</span>
+<p>You can also import an entry directly from a file</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl &lt; my_entry.txt
 </pre></div>
 </div>
 <div class="section" id="smart-timestamps">
@@ -82,8 +82,8 @@
 </div>
 <div class="section" id="starring-entries">
 <h3>Starring entries<a class="headerlink" href="#starring-entries" title="Permalink to this headline">¶</a></h3>
-<p>To mark an entry as a favourite, simply &#8220;star&#8221; it:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="n">last</span> <span class="n">sunday</span> <span class="o">*</span><span class="p">:</span> <span class="n">Best</span> <span class="n">day</span> <span class="n">of</span> <span class="n">my</span> <span class="n">life</span><span class="o">.</span>
+<p>To mark an entry as a favourite, simply &#8220;star&#8221; it</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl last sunday *: Best day of my life.
 </pre></div>
 </div>
 <p>If you don&#8217;t want to add a date (ie. your entry will be dated as now), The following options are equivalent:</p>
@@ -100,30 +100,30 @@
 </div>
 <div class="section" id="viewing">
 <h2>Viewing<a class="headerlink" href="#viewing" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl -n <span class="m">10</span>
 </pre></div>
 </div>
 <p>will list you the ten latest entries (if you&#8217;re lazy, <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">-10</span></code> will do the same),</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="kn">from</span> <span class="s2">&quot;last year&quot;</span> <span class="o">-</span><span class="n">until</span> <span class="n">march</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl -from <span class="s2">&quot;last year&quot;</span> -until march
 </pre></div>
 </div>
 <p>everything that happened from the start of last year to the start of last march. To only see your favourite entries, use</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">starred</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl -starred
 </pre></div>
 </div>
 </div>
 <div class="section" id="using-tags">
 <h2>Using Tags<a class="headerlink" href="#using-tags" title="Permalink to this headline">¶</a></h2>
 <p>Keep track of people, projects or locations, by tagging them with an <code class="docutils literal"><span class="pre">&#64;</span></code> in your entries</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="n">Had</span> <span class="n">a</span> <span class="n">wonderful</span> <span class="n">day</span> <span class="n">on</span> <span class="n">the</span> <span class="nd">@beach</span> <span class="k">with</span> <span class="nd">@Tom</span> <span class="ow">and</span> <span class="nd">@Anna</span><span class="o">.</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl Had a wonderful day on the @beach with @Tom and @Anna.
 </pre></div>
 </div>
 <p>You can filter your journal entries just like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="nd">@pinkie</span> <span class="nd">@WorldDomination</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl @pinkie @WorldDomination
 </pre></div>
 </div>
 <p>Will print all entries in which either <code class="docutils literal"><span class="pre">&#64;pinkie</span></code> or <code class="docutils literal"><span class="pre">&#64;WorldDomination</span></code> occurred.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">n</span> <span class="mi">5</span> <span class="o">-</span><span class="ow">and</span> <span class="nd">@pineapple</span> <span class="nd">@lubricant</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl -n <span class="m">5</span> -and @pineapple @lubricant
 </pre></div>
 </div>
 <p>the last five entries containing both <code class="docutils literal"><span class="pre">&#64;pineapple</span></code> <strong>and</strong> <code class="docutils literal"><span class="pre">&#64;lubricant</span></code>. You can change which symbols you&#8217;d like to use for tagging in the configuration.</p>
@@ -134,14 +134,14 @@
 </div>
 <div class="section" id="editing-older-entries">
 <h2>Editing older entries<a class="headerlink" href="#editing-older-entries" title="Permalink to this headline">¶</a></h2>
-<p>You can edit selected entries after you wrote them. This is particularly useful when your journal file is encrypted or if you&#8217;re using a DayOne journal. To use this feature, you need to have an editor configured in your journal configuration file (see <a class="reference internal" href="advanced.html"><span class="doc">advanced usage</span></a>):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">until</span> <span class="mi">1950</span> <span class="nd">@texas</span> <span class="o">-</span><span class="ow">and</span> <span class="nd">@history</span> <span class="o">--</span><span class="n">edit</span>
+<p>You can edit selected entries after you wrote them. This is particularly useful when your journal file is encrypted or if you&#8217;re using a DayOne journal. To use this feature, you need to have an editor configured in your journal configuration file (see <a class="reference internal" href="advanced.html"><span class="doc">advanced usage</span></a>)</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl -until <span class="m">1950</span> @texas -and @history --edit
 </pre></div>
 </div>
 <p>Will open your editor with all entries tagged with <code class="docutils literal"><span class="pre">&#64;texas</span></code> and <code class="docutils literal"><span class="pre">&#64;history</span></code> before 1950. You can make any changes to them you want; after you save the file and close the editor, your journal will be updated.</p>
 <p>Of course, if you are using multiple journals, you can also edit e.g. the latest entry of your work journal with <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">work</span> <span class="pre">-n</span> <span class="pre">1</span> <span class="pre">--edit</span></code>. In any case, this will bring up your editor and save (and, if applicable, encrypt) your edited journal after you save and exit the editor.</p>
-<p>You can also use this feature for deleting entries from your journal:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="nd">@girlfriend</span> <span class="o">-</span><span class="n">until</span> <span class="s1">&#39;june 2012&#39;</span> <span class="o">--</span><span class="n">edit</span>
+<p>You can also use this feature for deleting entries from your journal</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl @girlfriend -until <span class="s1">&#39;june 2012&#39;</span> --edit
 </pre></div>
 </div>
 <p>Just select all text, press delete, and everything is gone...</p>

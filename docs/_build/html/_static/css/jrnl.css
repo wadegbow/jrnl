@@ -365,7 +365,8 @@ a:active {
 .highlight-sh pre {
   color: white;
 }
-.highlight-python {
+.highlight-python,
+.highlight-sh {
   background: #2f1e34;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -382,13 +383,16 @@ a:active {
   font-size: 12pt;
   padding: 50px 20px 10px 20px;
 }
-.highlight-python #args {
+.highlight-python #args,
+.highlight-sh #args {
   color: #f6f7b9;
 }
-.highlight-python #output {
+.highlight-python #output,
+.highlight-sh #output {
   color: #9278b5;
 }
-.highlight-python:before {
+.highlight-python:before,
+.highlight-sh:before {
   content: "Terminal";
   display: block;
   width: 100%;
@@ -411,7 +415,8 @@ a:active {
   background-image: linear-gradient(to bottom, #eaeaea 0%, #bababa 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaeaea', endColorstr='#bababa', GradientType=0);
 }
-.highlight-python:after {
+.highlight-python:after,
+.highlight-sh:after {
   content: "";
   width: 48px;
   height: 30px;
@@ -420,10 +425,12 @@ a:active {
   left: 10px;
   background: url(../img/terminal.png) no-repeat center center;
 }
-.highlight-python pre {
+.highlight-python pre,
+.highlight-sh pre {
   margin: 0 0 10px 0;
 }
-.highlight-python pre:before {
+.highlight-python pre:before,
+.highlight-sh pre:before {
   content: "$ ";
   color: #deaa09;
 }

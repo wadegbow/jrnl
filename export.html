@@ -45,50 +45,50 @@
 <span id="export"></span><h1>Import and Export<a class="headerlink" href="#import-and-export" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tag-export">
 <h2>Tag export<a class="headerlink" href="#tag-export" title="Permalink to this headline">¶</a></h2>
-<p>With:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">tags</span>
+<p>With</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl --tags
 </pre></div>
 </div>
 <p>you&#8217;ll get a list of all tags you used in your journal, sorted by most frequent. Tags occurring several times in the same entry are only counted as one.</p>
 </div>
 <div class="section" id="list-of-all-entries">
 <h2>List of all entries<a class="headerlink" href="#list-of-all-entries" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">short</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl --short
 </pre></div>
 </div>
 <p>Will only display the date and title of each entry.</p>
 </div>
 <div class="section" id="json-export">
 <h2>JSON export<a class="headerlink" href="#json-export" title="Permalink to this headline">¶</a></h2>
-<p>Can do:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">json</span>
+<p>Can do</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl --export json
 </pre></div>
 </div>
 <p>Why not create a <a class="reference external" href="http://timeline.verite.co/">beautiful timeline</a> of your journal?</p>
 </div>
 <div class="section" id="markdown-export">
 <h2>Markdown export<a class="headerlink" href="#markdown-export" title="Permalink to this headline">¶</a></h2>
-<p>Use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">markdown</span>
+<p>Use</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl --export markdown
 </pre></div>
 </div>
 <p>Markdown is a simple markup language that is human readable and can be used to be rendered to other formats (html, pdf). This README for example is formatted in markdown and github makes it look nice.</p>
 </div>
 <div class="section" id="text-export">
 <h2>Text export<a class="headerlink" href="#text-export" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">text</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl --export text
 </pre></div>
 </div>
 <p>Pretty-prints your entire journal.</p>
 </div>
 <div class="section" id="export-to-files">
 <h2>Export to files<a class="headerlink" href="#export-to-files" title="Permalink to this headline">¶</a></h2>
-<p>You can specify the output file of your exported journal using the <cite>-o</cite> argument:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">md</span> <span class="o">-</span><span class="n">o</span> <span class="n">journal</span><span class="o">.</span><span class="n">md</span>
+<p>You can specify the output file of your exported journal using the <cite>-o</cite> argument</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl --export md -o journal.md
 </pre></div>
 </div>
-<p>The above command will generate a file named <cite>journal.md</cite>. If the <cite>-o</cite> argument is a directory, jrnl will export each entry into an individual file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">json</span> <span class="o">-</span><span class="n">o</span> <span class="n">my_entries</span><span class="o">/</span>
+<p>The above command will generate a file named <cite>journal.md</cite>. If the <cite>-o</cite> argument is a directory, jrnl will export each entry into an individual file</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl --export json -o my_entries/
 </pre></div>
 </div>
 <p>The contents of <cite>my_entries/</cite> will then look like this:</p>

@@ -46,11 +46,11 @@
 <div class="section" id="encrypting-and-decrypting">
 <h2>Encrypting and decrypting<a class="headerlink" href="#encrypting-and-decrypting" title="Permalink to this headline">¶</a></h2>
 <p>If you don&#8217;t choose to encrypt your file when you run <cite>jrnl</cite> for the first time, you can encrypt your existing journal file or change its password using</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">encrypt</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl --encrypt
 </pre></div>
 </div>
 <p>If it is already encrypted, you will first be asked for the current password. You can then enter a new password and your plain journal will replaced by the encrypted file. Conversely,</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">decrypt</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl --decrypt
 </pre></div>
 </div>
 <p>will replace your encrypted journal file by a Journal in plain text. You can also specify a filename, ie. <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">--decrypt</span> <span class="pre">plain_text_copy.txt</span></code>, to leave your original file untouched.</p>
@@ -63,22 +63,22 @@
 <div class="section" id="a-note-on-security">
 <h2>A note on security<a class="headerlink" href="#a-note-on-security" title="Permalink to this headline">¶</a></h2>
 <p>While jrnl follows best practises, true security is an illusion. Specifically, jrnl will leave traces in your memory and your shell history &#8211; it&#8217;s meant to keep journals secure in transit, for example when storing it on an <a class="reference external" href="http://techcrunch.com/2014/04/09/condoleezza-rice-joins-dropboxs-board/">untrusted</a> services such as Dropbox. If you&#8217;re concerned about security, disable history logging for journal in your <code class="docutils literal"><span class="pre">.bashrc</span></code></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">HISTIGNORE</span><span class="o">=</span><span class="s2">&quot;$HISTIGNORE:jrnl *&quot;</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nv">HISTIGNORE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HISTIGNORE</span><span class="s2">:jrnl *&quot;</span>
 </pre></div>
 </div>
 <p>If you are using zsh instead of bash, you can get the same behaviour adding this to your <code class="docutils literal"><span class="pre">zshrc</span></code></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">setopt</span> <span class="n">HIST_IGNORE_SPACE</span>
-<span class="n">alias</span> <span class="n">jrnl</span><span class="o">=</span><span class="s2">&quot; jrnl&quot;</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>setopt HIST_IGNORE_SPACE
+<span class="nb">alias</span> <span class="nv">jrnl</span><span class="o">=</span><span class="s2">&quot; jrnl&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="manual-decryption">
 <h2>Manual decryption<a class="headerlink" href="#manual-decryption" title="Permalink to this headline">¶</a></h2>
-<p>Should you ever want to decrypt your journal manually, you can do so with any program that supports the AES algorithm in CBC. The key used for encryption is the SHA-256-hash of your password, the IV (initialisation vector) is stored in the first 16 bytes of the encrypted file. The plain text is encoded in UTF-8 and padded according to PKCS#7 before being encrypted. Here&#8217;s a Python script that you can use to decrypt your journal:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<p>Should you ever want to decrypt your journal manually, you can do so with any program that supports the AES algorithm in CBC. The key used for encryption is the SHA-256-hash of your password, the IV (initialisation vector) is stored in the first 16 bytes of the encrypted file. The plain text is encoded in UTF-8 and padded according to PKCS#7 before being encrypted. Here&#8217;s a Python script that you can use to decrypt your journal</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="kn">import</span> <span class="nn">argparse</span>
-<span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="k">import</span> <span class="n">AES</span>
+<span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
 <span class="kn">import</span> <span class="nn">getpass</span>
 <span class="kn">import</span> <span class="nn">hashlib</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -97,7 +97,7 @@
 <span class="n">plain</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">[</span><span class="mi">16</span><span class="p">:])</span>
 <span class="n">plain</span> <span class="o">=</span> <span class="n">plain</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">plain</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:])</span>
 <span class="n">plain</span> <span class="o">=</span> <span class="n">plain</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">plain</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">plain</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

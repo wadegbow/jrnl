@@ -46,15 +46,15 @@
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>On OS X, the easiest way to install <em>jrnl</em> is using <a class="reference external" href="http://brew.sh/">Homebrew</a></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">jrnl</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>brew install jrnl
 </pre></div>
 </div>
 <p>On other platforms, install <em>jrnl</em> using pip</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jrnl</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>pip install jrnl
 </pre></div>
 </div>
 <p>Or, if you want the option to encrypt your journal,</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jrnl</span><span class="p">[</span><span class="n">encrypted</span><span class="p">]</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>pip install jrnl<span class="o">[</span>encrypted<span class="o">]</span>
 </pre></div>
 </div>
 <p>to install the dependencies for encrypting journals as well.</p>
@@ -67,8 +67,8 @@
 </div>
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
-<p>to make a new entry, just type:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="n">yesterday</span><span class="p">:</span> <span class="n">Called</span> <span class="ow">in</span> <span class="n">sick</span><span class="o">.</span> <span class="n">Used</span> <span class="n">the</span> <span class="n">time</span> <span class="n">to</span> <span class="n">clean</span> <span class="n">the</span> <span class="n">house</span> <span class="ow">and</span> <span class="n">spent</span> <span class="mi">4</span><span class="n">h</span> <span class="n">on</span> <span class="n">writing</span> <span class="n">my</span> <span class="n">book</span><span class="o">.</span>
+<p>to make a new entry, just type</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl yesterday: Called in sick. Used the <span class="nb">time</span> to clean the house and spent 4h on writing my book.
 </pre></div>
 </div>
 <p>and hit return. <code class="docutils literal"><span class="pre">yesterday:</span></code> will be interpreted as a time stamp. Everything until the first sentence mark (<code class="docutils literal"><span class="pre">.?!:</span></code>) will be interpreted as the title, the rest as the body. In your journal file, the result will look like this:</p>

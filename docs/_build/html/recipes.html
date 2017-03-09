@@ -47,7 +47,7 @@
 <div class="section" id="co-occurrence-of-tags">
 <h3>Co-occurrence of tags<a class="headerlink" href="#co-occurrence-of-tags" title="Permalink to this headline">¶</a></h3>
 <p>If I want to find out how often I mentioned my flatmates Alberto and Melo in the same entry, I run</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="nd">@alberto</span> <span class="o">--</span><span class="n">tags</span> <span class="o">|</span> <span class="n">grep</span> <span class="nd">@melo</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl @alberto --tags <span class="p">|</span> grep @melo
 </pre></div>
 </div>
 <p>And will get something like <code class="docutils literal"><span class="pre">&#64;melo:</span> <span class="pre">9</span></code>, meaning there are 9 entries where both <code class="docutils literal"><span class="pre">&#64;alberto</span></code> and <code class="docutils literal"><span class="pre">&#64;melo</span></code> are tagged. How does this work? First, <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">&#64;alberto</span></code> will filter the journal to only entries containing the tag <code class="docutils literal"><span class="pre">&#64;alberto</span></code>, and then the <code class="docutils literal"><span class="pre">--tags</span></code> option will print out how often each tag occurred in this <cite>filtered</cite> journal. Finally, we pipe this to <code class="docutils literal"><span class="pre">grep</span></code> which will only display the line containing <code class="docutils literal"><span class="pre">&#64;melo</span></code>.</p>
@@ -55,7 +55,7 @@
 <div class="section" id="combining-filters">
 <h3>Combining filters<a class="headerlink" href="#combining-filters" title="Permalink to this headline">¶</a></h3>
 <p>You can do things like</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="nd">@fixed</span> <span class="o">-</span><span class="n">starred</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="o">-</span><span class="n">until</span> <span class="s2">&quot;jan 2013&quot;</span> <span class="o">--</span><span class="n">short</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl @fixed -starred -n <span class="m">10</span> -until <span class="s2">&quot;jan 2013&quot;</span> --short
 </pre></div>
 </div>
 <p>To get a short summary of the 10 most recent, favourited entries before January 1, 2013 that are tagged with <code class="docutils literal"><span class="pre">&#64;fixed</span></code>.</p>
@@ -63,11 +63,11 @@
 <div class="section" id="statistics">
 <h3>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h3>
 <p>How much did I write last year?</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="kn">from</span> <span class="s2">&quot;jan 1 2013&quot;</span> <span class="o">-</span><span class="n">until</span> <span class="s2">&quot;dec 31 2013&quot;</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">w</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl -from <span class="s2">&quot;jan 1 2013&quot;</span> -until <span class="s2">&quot;dec 31 2013&quot;</span> <span class="p">|</span> wc -w
 </pre></div>
 </div>
 <p>Will give you the number of words you wrote in 2013. How long is my average entry?</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>expr $(jrnl --export text | wc -w) / $(jrnl --short | wc -l)
+<div class="highlight-sh"><div class="highlight"><pre><span></span>expr <span class="k">$(</span>jrnl --export text <span class="p">|</span> wc -w<span class="k">)</span> / <span class="k">$(</span>jrnl --short <span class="p">|</span> wc -l<span class="k">)</span>
 </pre></div>
 </div>
 <p>This will first get the total number of words in the journal and divide it by the number of entries (this works because <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">--short</span></code> will print exactly one line per entry).</p>
@@ -75,7 +75,7 @@
 <div class="section" id="importing-older-files">
 <h3>Importing older files<a class="headerlink" href="#importing-older-files" title="Permalink to this headline">¶</a></h3>
 <p>If you want to import a file as an entry to jrnl, you can just do <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">&lt;</span> <span class="pre">entry.ext</span></code>. But what if you want the modification date of the file to be the date of the entry in jrnl? Try this</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>echo `stat -f %Sm -t &#39;%d %b %Y at %H:%M: &#39; entry.txt` `cat entry.txt` | jrnl
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="sb">`</span>stat -f %Sm -t <span class="s1">&#39;%d %b %Y at %H:%M: &#39;</span> entry.txt<span class="sb">`</span> <span class="sb">`</span>cat entry.txt<span class="sb">`</span> <span class="p">|</span> jrnl
 </pre></div>
 </div>
 <p>The first part will format the modification date of <code class="docutils literal"><span class="pre">entry.txt</span></code>, and then combine it with the contents of the file before piping it to jrnl. If you do that often, consider creating a function in your <code class="docutils literal"><span class="pre">.bashrc</span></code> or <code class="docutils literal"><span class="pre">.bash_profile</span></code></p>

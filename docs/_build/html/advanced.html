@@ -137,10 +137,8 @@
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">default</span></code> journal gets created the first time you start _jrnl_. Now you can access the <code class="docutils literal"><span class="pre">work</span></code> journal by using <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">work</span></code> instead of <code class="docutils literal"><span class="pre">jrnl</span></code>, eg.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="n">work</span> <span class="n">at</span> <span class="mi">10</span><span class="n">am</span><span class="p">:</span> <span class="n">Meeting</span> <span class="k">with</span> <span class="nd">@Steve</span>
-</pre></div>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="n">work</span> <span class="o">-</span><span class="n">n</span> <span class="mi">3</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>jrnl work at 10am: Meeting with @Steve
+jrnl work -n <span class="m">3</span>
 </pre></div>
 </div>
 <p>will both use <code class="docutils literal"><span class="pre">~/work.txt</span></code>, while <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">-n</span> <span class="pre">3</span></code> will display the last three entries from <code class="docutils literal"><span class="pre">~/journal.txt</span></code> (and so does <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">default</span> <span class="pre">-n</span> <span class="pre">3</span></code>).</p>
