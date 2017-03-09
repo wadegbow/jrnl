@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Getting started &mdash; jrnl 1.9.8 documentation</title>
+    <title>Getting started &#8212; jrnl 1.9.8 documentation</title>
     
     <link rel="stylesheet" href="_static/css/jrnl.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,13 +17,15 @@
         VERSION:     '1.9.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="jrnl 1.9.8 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Basic Usage" href="usage.html" />
     <link rel="prev" title="Overview" href="overview.html" />
      
@@ -32,49 +34,49 @@
     <link rel="shortcut icon" href="_static/img/favicon.ico">
   
   </head>
-  <body>  
+  <body role="document">  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="getting-started">
 <span id="download"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>On OS X, the easiest way to install <em>jrnl</em> is using <a class="reference external" href="http://brew.sh/">Homebrew</a></p>
-<div class="highlight-python"><div class="highlight"><pre>brew install jrnl
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">jrnl</span>
 </pre></div>
 </div>
 <p>On other platforms, install <em>jrnl</em> using pip</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install jrnl
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jrnl</span>
 </pre></div>
 </div>
 <p>Or, if you want the option to encrypt your journal,</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install jrnl[encrypted]
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jrnl</span><span class="p">[</span><span class="n">encrypted</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>to install the dependencies for encrypting journals as well.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Installing the encryption library, <cite>pycrypto</cite>, requires a <cite>gcc</cite> compiler. For this reason, jrnl will not install <cite>pycrypto</cite> unless explicitly told so like this. You can <a class="reference external" href="https://www.dlitz.net/software/pycrypto/">install PyCrypto manually</a> first or install it with <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pycrypto</span></tt> if you have a <cite>gcc</cite> compiler.</p>
-<p class="last">Also note that when using zsh, you the correct syntax is <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;jrnl[encrypted]&quot;</span></tt> (note the quotes).</p>
+<p>Installing the encryption library, <cite>pycrypto</cite>, requires a <cite>gcc</cite> compiler. For this reason, jrnl will not install <cite>pycrypto</cite> unless explicitly told so like this. You can <a class="reference external" href="https://www.dlitz.net/software/pycrypto/">install PyCrypto manually</a> first or install it with <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pycrypto</span></code> if you have a <cite>gcc</cite> compiler.</p>
+<p class="last">Also note that when using zsh, the correct syntax is <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;jrnl[encrypted]&quot;</span></code> (note the quotes).</p>
 </div>
-<p>The first time you run <tt class="docutils literal"><span class="pre">jrnl</span></tt> you will be asked where your journal file should be created and whether you wish to encrypt it.</p>
+<p>The first time you run <code class="docutils literal"><span class="pre">jrnl</span></code> you will be asked where your journal file should be created and whether you wish to encrypt it.</p>
 </div>
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
 <p>to make a new entry, just type:</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl yesterday: Called in sick. Used the time to clean the house and spent 4h on writing my book.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="n">yesterday</span><span class="p">:</span> <span class="n">Called</span> <span class="ow">in</span> <span class="n">sick</span><span class="o">.</span> <span class="n">Used</span> <span class="n">the</span> <span class="n">time</span> <span class="n">to</span> <span class="n">clean</span> <span class="n">the</span> <span class="n">house</span> <span class="ow">and</span> <span class="n">spent</span> <span class="mi">4</span><span class="n">h</span> <span class="n">on</span> <span class="n">writing</span> <span class="n">my</span> <span class="n">book</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>and hit return. <tt class="docutils literal"><span class="pre">yesterday:</span></tt> will be interpreted as a time stamp. Everything until the first sentence mark (<tt class="docutils literal"><span class="pre">.?!:</span></tt>) will be interpreted as the title, the rest as the body. In your journal file, the result will look like this:</p>
-<div class="highlight-output"><div class="highlight"><pre>2012-03-29 09:00 Called in sick.
+<p>and hit return. <code class="docutils literal"><span class="pre">yesterday:</span></code> will be interpreted as a time stamp. Everything until the first sentence mark (<code class="docutils literal"><span class="pre">.?!:</span></code>) will be interpreted as the title, the rest as the body. In your journal file, the result will look like this:</p>
+<div class="highlight-output"><div class="highlight"><pre><span></span>2012-03-29 09:00 Called in sick.
 Used the time to clean the house and spent 4h on writing my book.
 </pre></div>
 </div>
-<p>If you just call <tt class="docutils literal"><span class="pre">jrnl</span></tt>, you will be prompted to compose your entry - but you can also configure <em>jrnl</em> to use your external editor.</p>
+<p>If you just call <code class="docutils literal"><span class="pre">jrnl</span></code>, you will be prompted to compose your entry - but you can also configure <em>jrnl</em> to use your external editor.</p>
 </div>
 </div>
 
@@ -87,7 +89,7 @@ Used the time to clean the house and spent 4h on writing my book.
     <h2>Documentation</h2>
     <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Getting started</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quickstart">Quickstart</a></li>
 </ul>
@@ -99,17 +101,14 @@ Used the time to clean the house and spent 4h on writing my book.
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">FAQ</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   </aside>

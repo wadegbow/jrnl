@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Basic Usage &mdash; jrnl 1.9.8 documentation</title>
+    <title>Basic Usage &#8212; jrnl 1.9.8 documentation</title>
     
     <link rel="stylesheet" href="_static/css/jrnl.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,13 +17,15 @@
         VERSION:     '1.9.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="jrnl 1.9.8 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Encryption" href="encryption.html" />
     <link rel="prev" title="Getting started" href="installation.html" />
      
@@ -32,12 +34,12 @@
     <link rel="shortcut icon" href="_static/img/favicon.ico">
   
   </head>
-  <body>  
+  <body role="document">  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="basic-usage">
 <span id="usage"></span><h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
@@ -46,23 +48,23 @@
 <div class="section" id="listing-journals">
 <h2>Listing Journals<a class="headerlink" href="#listing-journals" title="Permalink to this headline">¶</a></h2>
 <p>You can list the journals accessible by jrnl:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">jrnl</span> <span class="o">-</span><span class="n">ls</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">ls</span>
 </pre></div>
 </div>
 <p>The journals displayed correspond to those specified in the jrnl configuration file.</p>
 </div>
 <div class="section" id="composing-entries">
 <h2>Composing Entries<a class="headerlink" href="#composing-entries" title="Permalink to this headline">¶</a></h2>
-<p>Composing mode is entered by either starting <tt class="docutils literal"><span class="pre">jrnl</span></tt> without any arguments &#8211; which will prompt you to write an entry or launch your editor &#8211; or by just writing an entry on the prompt, such as:</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl today at 3am: I just met Steve Buscemi in a bar! He looked funny.
+<p>Composing mode is entered by either starting <code class="docutils literal"><span class="pre">jrnl</span></code> without any arguments &#8211; which will prompt you to write an entry or launch your editor &#8211; or by just writing an entry on the prompt, such as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>jrnl today at 3am: I just met Steve Buscemi in a bar! He looked funny.
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Most shell contains a certain number of reserved characters, such as <tt class="docutils literal"><span class="pre">#</span></tt> and <tt class="docutils literal"><span class="pre">*</span></tt>. Unbalanced quotes, parenthesis, and so on will also get into the way of your editing. For writing longer entries, just enter <tt class="docutils literal"><span class="pre">jrnl</span></tt> and hit <tt class="docutils literal"><span class="pre">return</span></tt>. Only then enter the text of your journal entry. Alternatively, <a class="reference internal" href="advanced.html"><em>use an external editor</em></a>).</p>
+<p class="last">Most shell contains a certain number of reserved characters, such as <code class="docutils literal"><span class="pre">#</span></code> and <code class="docutils literal"><span class="pre">*</span></code>. Unbalanced quotes, parenthesis, and so on will also get into the way of your editing. For writing longer entries, just enter <code class="docutils literal"><span class="pre">jrnl</span></code> and hit <code class="docutils literal"><span class="pre">return</span></code>. Only then enter the text of your journal entry. Alternatively, <a class="reference internal" href="advanced.html"><span class="doc">use an external editor</span></a>).</p>
 </div>
 <p>You can also import an entry directly from a file:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">jrnl</span> <span class="o">&lt;</span> <span class="n">my_entry</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">&lt;</span> <span class="n">my_entry</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <div class="section" id="smart-timestamps">
@@ -81,72 +83,72 @@
 <div class="section" id="starring-entries">
 <h3>Starring entries<a class="headerlink" href="#starring-entries" title="Permalink to this headline">¶</a></h3>
 <p>To mark an entry as a favourite, simply &#8220;star&#8221; it:</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl last sunday *: Best day of my life.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="n">last</span> <span class="n">sunday</span> <span class="o">*</span><span class="p">:</span> <span class="n">Best</span> <span class="n">day</span> <span class="n">of</span> <span class="n">my</span> <span class="n">life</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>If you don&#8217;t want to add a date (ie. your entry will be dated as now), The following options are equivalent:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">jrnl</span> <span class="pre">*:</span> <span class="pre">Best</span> <span class="pre">day</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">life.</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">jrnl</span> <span class="pre">*Best</span> <span class="pre">day</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">life.</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">jrnl</span> <span class="pre">Best</span> <span class="pre">day</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">life.*</span></tt></li>
+<li><code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">*:</span> <span class="pre">Best</span> <span class="pre">day</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">life.</span></code></li>
+<li><code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">*Best</span> <span class="pre">day</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">life.</span></code></li>
+<li><code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">Best</span> <span class="pre">day</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">life.*</span></code></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Just make sure that the asterisk sign is <strong>not</strong> surrounded by whitespaces, e.g. <tt class="docutils literal"><span class="pre">jrnl</span> <span class="pre">Best</span> <span class="pre">day</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">life!</span> <span class="pre">*</span></tt> will <strong>not</strong> work (the reason being that the <tt class="docutils literal"><span class="pre">*</span></tt> sign has a special meaning on most shells).</p>
+<p class="last">Just make sure that the asterisk sign is <strong>not</strong> surrounded by whitespaces, e.g. <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">Best</span> <span class="pre">day</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">life!</span> <span class="pre">*</span></code> will <strong>not</strong> work (the reason being that the <code class="docutils literal"><span class="pre">*</span></code> sign has a special meaning on most shells).</p>
 </div>
 </div>
 </div>
 <div class="section" id="viewing">
 <h2>Viewing<a class="headerlink" href="#viewing" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>jrnl -n 10
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span>
 </pre></div>
 </div>
-<p>will list you the ten latest entries (if you&#8217;re lazy, <tt class="docutils literal"><span class="pre">jrnl</span> <span class="pre">-10</span></tt> will do the same),</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl -from &quot;last year&quot; -until march
+<p>will list you the ten latest entries (if you&#8217;re lazy, <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">-10</span></code> will do the same),</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="kn">from</span> <span class="s2">&quot;last year&quot;</span> <span class="o">-</span><span class="n">until</span> <span class="n">march</span>
 </pre></div>
 </div>
 <p>everything that happened from the start of last year to the start of last march. To only see your favourite entries, use</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">jrnl</span> <span class="o">-</span><span class="n">starred</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">starred</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="using-tags">
 <h2>Using Tags<a class="headerlink" href="#using-tags" title="Permalink to this headline">¶</a></h2>
-<p>Keep track of people, projects or locations, by tagging them with an <tt class="docutils literal"><span class="pre">&#64;</span></tt> in your entries</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl Had a wonderful day on the @beach with @Tom and @Anna.
+<p>Keep track of people, projects or locations, by tagging them with an <code class="docutils literal"><span class="pre">&#64;</span></code> in your entries</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="n">Had</span> <span class="n">a</span> <span class="n">wonderful</span> <span class="n">day</span> <span class="n">on</span> <span class="n">the</span> <span class="nd">@beach</span> <span class="k">with</span> <span class="nd">@Tom</span> <span class="ow">and</span> <span class="nd">@Anna</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>You can filter your journal entries just like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl @pinkie @WorldDomination
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="nd">@pinkie</span> <span class="nd">@WorldDomination</span>
 </pre></div>
 </div>
-<p>Will print all entries in which either <tt class="docutils literal"><span class="pre">&#64;pinkie</span></tt> or <tt class="docutils literal"><span class="pre">&#64;WorldDomination</span></tt> occurred.</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl -n 5 -and @pineapple @lubricant
+<p>Will print all entries in which either <code class="docutils literal"><span class="pre">&#64;pinkie</span></code> or <code class="docutils literal"><span class="pre">&#64;WorldDomination</span></code> occurred.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">n</span> <span class="mi">5</span> <span class="o">-</span><span class="ow">and</span> <span class="nd">@pineapple</span> <span class="nd">@lubricant</span>
 </pre></div>
 </div>
-<p>the last five entries containing both <tt class="docutils literal"><span class="pre">&#64;pineapple</span></tt> <strong>and</strong> <tt class="docutils literal"><span class="pre">&#64;lubricant</span></tt>. You can change which symbols you&#8217;d like to use for tagging in the configuration.</p>
+<p>the last five entries containing both <code class="docutils literal"><span class="pre">&#64;pineapple</span></code> <strong>and</strong> <code class="docutils literal"><span class="pre">&#64;lubricant</span></code>. You can change which symbols you&#8217;d like to use for tagging in the configuration.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><tt class="docutils literal"><span class="pre">jrnl</span> <span class="pre">&#64;pinkie</span> <span class="pre">&#64;WorldDomination</span></tt> will switch to viewing mode because although <strong>no</strong> command line arguments are given, all the input strings look like tags - <em>jrnl</em> will assume you want to filter by tag.</p>
+<p class="last"><code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">&#64;pinkie</span> <span class="pre">&#64;WorldDomination</span></code> will switch to viewing mode because although <strong>no</strong> command line arguments are given, all the input strings look like tags - <em>jrnl</em> will assume you want to filter by tag.</p>
 </div>
 </div>
 <div class="section" id="editing-older-entries">
 <h2>Editing older entries<a class="headerlink" href="#editing-older-entries" title="Permalink to this headline">¶</a></h2>
-<p>You can edit selected entries after you wrote them. This is particularly useful when your journal file is encrypted or if you&#8217;re using a DayOne journal. To use this feature, you need to have an editor configured in your journal configuration file (see <a class="reference internal" href="advanced.html"><em>advanced usage</em></a>):</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl -until 1950 @texas -and @history --edit
+<p>You can edit selected entries after you wrote them. This is particularly useful when your journal file is encrypted or if you&#8217;re using a DayOne journal. To use this feature, you need to have an editor configured in your journal configuration file (see <a class="reference internal" href="advanced.html"><span class="doc">advanced usage</span></a>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">-</span><span class="n">until</span> <span class="mi">1950</span> <span class="nd">@texas</span> <span class="o">-</span><span class="ow">and</span> <span class="nd">@history</span> <span class="o">--</span><span class="n">edit</span>
 </pre></div>
 </div>
-<p>Will open your editor with all entries tagged with <tt class="docutils literal"><span class="pre">&#64;texas</span></tt> and <tt class="docutils literal"><span class="pre">&#64;history</span></tt> before 1950. You can make any changes to them you want; after you save the file and close the editor, your journal will be updated.</p>
-<p>Of course, if you are using multiple journals, you can also edit e.g. the latest entry of your work journal with <tt class="docutils literal"><span class="pre">jrnl</span> <span class="pre">work</span> <span class="pre">-n</span> <span class="pre">1</span> <span class="pre">--edit</span></tt>. In any case, this will bring up your editor and save (and, if applicable, encrypt) your edited journal after you save and exit the editor.</p>
+<p>Will open your editor with all entries tagged with <code class="docutils literal"><span class="pre">&#64;texas</span></code> and <code class="docutils literal"><span class="pre">&#64;history</span></code> before 1950. You can make any changes to them you want; after you save the file and close the editor, your journal will be updated.</p>
+<p>Of course, if you are using multiple journals, you can also edit e.g. the latest entry of your work journal with <code class="docutils literal"><span class="pre">jrnl</span> <span class="pre">work</span> <span class="pre">-n</span> <span class="pre">1</span> <span class="pre">--edit</span></code>. In any case, this will bring up your editor and save (and, if applicable, encrypt) your edited journal after you save and exit the editor.</p>
 <p>You can also use this feature for deleting entries from your journal:</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl @girlfriend -until &#39;june 2012&#39; --edit
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="nd">@girlfriend</span> <span class="o">-</span><span class="n">until</span> <span class="s1">&#39;june 2012&#39;</span> <span class="o">--</span><span class="n">edit</span>
 </pre></div>
 </div>
 <p>Just select all text, press delete, and everything is gone...</p>
 <div class="section" id="editing-dayone-journals">
 <h3>Editing DayOne Journals<a class="headerlink" href="#editing-dayone-journals" title="Permalink to this headline">¶</a></h3>
 <p>DayOne journals can be edited exactly the same way, however the output looks a little bit different because of the way DayOne stores its entries:</p>
-<div class="highlight-output"><div class="highlight"><pre># af8dbd0d43fb55458f11aad586ea2abf
+<div class="highlight-output"><div class="highlight"><pre><span></span># af8dbd0d43fb55458f11aad586ea2abf
 2013-05-02 15:30 I told everyone I built my @robot wife for sex.
 But late at night when we&#39;re alone we mostly play Battleship.
 
@@ -170,7 +172,7 @@ I just figured I&#39;d be on the other side.
     <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Getting started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Basic Usage</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#listing-journals">Listing Journals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#composing-entries">Composing Entries</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#smart-timestamps">Smart timestamps</a></li>
@@ -191,17 +193,14 @@ I just figured I&#39;d be on the other side.
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">FAQ</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   </aside>

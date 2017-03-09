@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Import and Export &mdash; jrnl 1.9.8 documentation</title>
+    <title>Import and Export &#8212; jrnl 1.9.8 documentation</title>
     
     <link rel="stylesheet" href="_static/css/jrnl.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,13 +17,15 @@
         VERSION:     '1.9.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="jrnl 1.9.8 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Advanced Usage" href="advanced.html" />
     <link rel="prev" title="Encryption" href="encryption.html" />
      
@@ -32,26 +34,26 @@
     <link rel="shortcut icon" href="_static/img/favicon.ico">
   
   </head>
-  <body>  
+  <body role="document">  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="import-and-export">
 <span id="export"></span><h1>Import and Export<a class="headerlink" href="#import-and-export" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tag-export">
 <h2>Tag export<a class="headerlink" href="#tag-export" title="Permalink to this headline">¶</a></h2>
 <p>With:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">jrnl</span> <span class="o">--</span><span class="n">tags</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">tags</span>
 </pre></div>
 </div>
 <p>you&#8217;ll get a list of all tags you used in your journal, sorted by most frequent. Tags occurring several times in the same entry are only counted as one.</p>
 </div>
 <div class="section" id="list-of-all-entries">
 <h2>List of all entries<a class="headerlink" href="#list-of-all-entries" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">jrnl</span> <span class="o">--</span><span class="n">short</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">short</span>
 </pre></div>
 </div>
 <p>Will only display the date and title of each entry.</p>
@@ -59,7 +61,7 @@
 <div class="section" id="json-export">
 <h2>JSON export<a class="headerlink" href="#json-export" title="Permalink to this headline">¶</a></h2>
 <p>Can do:</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl --export json
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">json</span>
 </pre></div>
 </div>
 <p>Why not create a <a class="reference external" href="http://timeline.verite.co/">beautiful timeline</a> of your journal?</p>
@@ -67,14 +69,14 @@
 <div class="section" id="markdown-export">
 <h2>Markdown export<a class="headerlink" href="#markdown-export" title="Permalink to this headline">¶</a></h2>
 <p>Use:</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl --export markdown
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">markdown</span>
 </pre></div>
 </div>
 <p>Markdown is a simple markup language that is human readable and can be used to be rendered to other formats (html, pdf). This README for example is formatted in markdown and github makes it look nice.</p>
 </div>
 <div class="section" id="text-export">
 <h2>Text export<a class="headerlink" href="#text-export" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>jrnl --export text
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">text</span>
 </pre></div>
 </div>
 <p>Pretty-prints your entire journal.</p>
@@ -82,15 +84,15 @@
 <div class="section" id="export-to-files">
 <h2>Export to files<a class="headerlink" href="#export-to-files" title="Permalink to this headline">¶</a></h2>
 <p>You can specify the output file of your exported journal using the <cite>-o</cite> argument:</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl --export md -o journal.md
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">md</span> <span class="o">-</span><span class="n">o</span> <span class="n">journal</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
 <p>The above command will generate a file named <cite>journal.md</cite>. If the <cite>-o</cite> argument is a directory, jrnl will export each entry into an individual file:</p>
-<div class="highlight-python"><div class="highlight"><pre>jrnl --export json -o my_entries/
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jrnl</span> <span class="o">--</span><span class="n">export</span> <span class="n">json</span> <span class="o">-</span><span class="n">o</span> <span class="n">my_entries</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>The contents of <cite>my_entries/</cite> will then look like this:</p>
-<div class="highlight-output"><div class="highlight"><pre>my_entries/
+<div class="highlight-output"><div class="highlight"><pre><span></span>my_entries/
 |- 2013_06_03_a-beautiful-day.json
 |- 2013_06_07_dinner-with-gabriel.json
 |- ...
@@ -111,7 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Basic Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="encryption.html">Encryption</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Import and Export</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Import and Export</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#tag-export">Tag export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#list-of-all-entries">List of all entries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#json-export">JSON export</a></li>
@@ -124,17 +126,14 @@
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">FAQ</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
   </aside>
